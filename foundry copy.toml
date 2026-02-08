@@ -1,0 +1,67 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+solc_version = "0.8.20"
+optimizer = true
+optimizer_runs = 200
+via_ir = false
+
+# Gas reporting
+gas_reports = ["ZKAuthVerifier"]
+
+# RPC endpoints for different networks
+[rpc_endpoints]
+# Polygon zkEVM Testnet (Cardona)
+polygon_zkevm_testnet = "https://rpc.cardona.zkevm-rpc.com"
+polygon_zkevm = "https://zkevm-rpc.com"
+
+# zkSync Era
+zksync_testnet = "https://sepolia.era.zksync.dev"
+zksync = "https://mainnet.era.zksync.io"
+
+# Scroll
+scroll_sepolia = "https://sepolia-rpc.scroll.io"
+scroll = "https://rpc.scroll.io"
+
+# Linea
+linea_testnet = "https://rpc.goerli.linea.build"
+linea = "https://rpc.linea.build"
+
+# Taiko
+taiko_testnet = "https://rpc.hekla.taiko.xyz"
+taiko = "https://rpc.mainnet.taiko.xyz"
+
+# Manta Pacific
+manta_testnet = "https://pacific-rpc.testnet.manta.network/http"
+manta = "https://pacific-rpc.manta.network/http"
+
+# Mantle
+mantle_testnet = "https://rpc.testnet.mantle.xyz"
+mantle = "https://rpc.mantle.xyz"
+
+# Localhost
+localhost = "http://127.0.0.1:8545"
+
+# Etherscan API keys for verification
+[etherscan]
+polygon_zkevm_testnet = { key = "${POLYGONSCAN_API_KEY}", url = "https://api-cardona-zkevm.polygonscan.com/api" }
+polygon_zkevm = { key = "${POLYGONSCAN_API_KEY}", url = "https://api-zkevm.polygonscan.com/api" }
+scroll_sepolia = { key = "${SCROLLSCAN_API_KEY}", url = "https://api-sepolia.scrollscan.com/api" }
+scroll = { key = "${SCROLLSCAN_API_KEY}", url = "https://api.scrollscan.com/api" }
+linea_testnet = { key = "${LINEASCAN_API_KEY}", url = "https://api-goerli.lineascan.build/api" }
+linea = { key = "${LINEASCAN_API_KEY}", url = "https://api.lineascan.build/api" }
+
+# Formatter settings
+[fmt]
+line_length = 120
+tab_width = 4
+bracket_spacing = true
+int_types = "long"
+multiline_func_header = "attributes_first"
+quote_style = "double"
+number_underscore = "thousands"
+
+# Testing
+[fuzz]
+runs = 256
